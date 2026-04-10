@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of a passionate 1st year B.Tech CSE student aspiring for a career in Cybersecurity. Explore projects, achievements, and more.">
+    <title>🚀 Space Portfolio | B.Tech CSE Student</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Stars Background Canvas -->
+    <canvas id="starsCanvas"></canvas>
+
+    <!-- 3D Planets -->
+    <div class="planet planet-1" id="planet1"></div>
+    <div class="planet planet-2" id="planet2"></div>
+    <div class="planet planet-3" id="planet3"></div>
+    <div class="planet planet-ring" id="planet4">
+        <div class="ring"></div>
+    </div>
+    <div class="shooting-star" id="shootingStar1"></div>
+    <div class="shooting-star shooting-star-2" id="shootingStar2"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass" id="navbar">
+        <div class="nav-brand">
+            <span class="logo-icon">🪐</span>
+            <span class="logo-text">PORTFOLIO</span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link active" data-section="home"><i class="fas fa-rocket"></i> Home</a></li>
+            <li><a href="#about" class="nav-link" data-section="about"><i class="fas fa-user-astronaut"></i> About</a></li>
+            <li><a href="#achievements" class="nav-link" data-section="achievements"><i class="fas fa-trophy"></i> Achievements</a></li>
+            <li><a href="#projects" class="nav-link" data-section="projects"><i class="fas fa-code"></i> Projects</a></li>
+            <li><a href="#gallery" class="nav-link" data-section="gallery"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="#contact" class="nav-link" data-section="contact"><i class="fas fa-satellite-dish"></i> Contact</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HOME SECTION ========== -->
+    <section id="home" class="section hero-section">
+        <div class="hero-content">
+            <div class="hero-image-container animate-on-scroll">
+                <div class="hero-image-glow"></div>
+                <div class="hero-image-ring"></div>
+                <div class="hero-image">
+                    <!-- Replace src with your actual photo -->
+                    <img src="images/profile.jpg" alt="Profile Photo" id="profilePhoto" onerror="this.src='https://api.dicebear.com/7.x/initials/svg?seed=MS&backgroundColor=6c3ce0&textColor=ffffff&fontSize=40'">
+                </div>
+            </div>
+            <div class="hero-text animate-on-scroll">
+                <p class="hero-greeting">
+                    <span class="typing-text" id="typingGreeting"></span><span class="cursor">|</span>
+                </p>
+                <h1 class="hero-name glitch" data-text="YOUR NAME">YOUR NAME</h1>
+                <p class="hero-tagline">
+                    <span class="tag-icon">🎓</span> 1st Year B.Tech CSE Student
+                </p>
+                <p class="hero-description">
+                    Aspiring <span class="highlight">Cybersecurity Professional</span> with a passion for 
+                    technology, problem-solving, and building secure digital solutions. Currently exploring 
+                    the vast universe of computer science — from networking fundamentals to ethical hacking.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-card glass">
+                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-card glass">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Certificates</span>
+                    </div>
+                    <div class="stat-card glass">
+                        <span class="stat-number" data-count="10">0</span>
+                        <span class="stat-label">Skills</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-paper-plane"></i> Contact Me
+                    </a>
+                    <a href="resume.pdf" class="btn btn-glow" download>
+                        <i class="fas fa-download"></i> Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll to Explore</p>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT ME SECTION ========== -->
+    <section id="about" class="section">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">// WHO AM I</span>
+            <h2 class="section-title">About <span class="highlight">Me</span></h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card glass animate-on-scroll" id="aboutEducation">
+                <div class="card-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Education</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>B.Tech in Computer Science & Engineering</h4>
+                            <p class="timeline-date">2025 - 2029 (Expected)</p>
+                            <p>Currently in 1st year, building strong foundations in programming, 
+                            data structures, and computer networks.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Higher Secondary (12th Grade)</h4>
+                            <p class="timeline-date">Completed 2025</p>
+                            <p>Focused on Science stream with Mathematics and Computer Science.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Secondary School (10th Grade)</h4>
+                            <p class="timeline-date">Completed 2023</p>
+                            <p>Built the initial interest in technology and programming.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-card glass animate-on-scroll" id="aboutInterests">
+                <div class="card-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Interests & Hobbies</h3>
+                <div class="interests-grid">
+                    <div class="interest-item">
+                        <span class="interest-emoji">♟️</span>
+                        <span>Playing Chess</span>
+                    </div>
+                    <div class="interest-item">
+                        <span class="interest-emoji">📚</span>
+                        <span>Reading Novels</span>
+                    </div>
+                    <div class="interest-item">
+                        <span class="interest-emoji">🔐</span>
+                        <span>Cybersecurity</span>
+                    </div>
+                    <div class="interest-item">
+                        <span class="interest-emoji">💻</span>
+                        <span>Coding</span>
+                    </div>
+                    <div class="interest-item">
+                        <span class="interest-emoji">🌐</span>
+                        <span>Networking</span>
+                    </div>
+                    <div class="interest-item">
+                        <span class="interest-emoji">🎮</span>
+                        <span>Tech Exploration</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-card glass animate-on-scroll" id="aboutGoals">
+                <div class="card-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Goals</h3>
+                <ul class="goals-list">
+                    <li>
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Become a Cybersecurity Expert and Ethical Hacker</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-certificate"></i>
+                        <span>Earn industry certifications (CEH, CompTIA Security+, CISSP)</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Contribute to open-source security tools</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-users"></i>
+                        <span>Participate in CTF competitions and hackathons</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-globe"></i>
+                        <span>Build a professional network in the cybersecurity community</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="about-card glass animate-on-scroll" id="aboutStrengths">
+                <div class="card-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Strengths</h3>
+                <div class="strengths-container">
+                    <div class="strength-bar">
+                        <div class="strength-info">
+                            <span>Problem Solving</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="strength-bar">
+                        <div class="strength-info">
+                            <span>Analytical Thinking</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="strength-bar">
+                        <div class="strength-info">
+                            <span>Team Collaboration</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="strength-bar">
+                        <div class="strength-info">
+                            <span>Quick Learner</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" data-width="92"></div>
+                        </div>
+                    </div>
+                    <div class="strength-bar">
+                        <div class="strength-info">
+                            <span>Communication</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" data-width="80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Orbit -->
+        <div class="skills-orbit animate-on-scroll">
+            <h3 class="orbit-title">Technical Skills</h3>
+            <div class="orbit-container">
+                <div class="orbit-center">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="skill-planet" style="--orbit-radius: 100px; --orbit-speed: 15s; --start-angle: 0deg;">
+                    <span>Python</span>
+                </div>
+                <div class="skill-planet" style="--orbit-radius: 100px; --orbit-speed: 15s; --start-angle: 120deg;">
+                    <span>HTML/CSS</span>
+                </div>
+                <div class="skill-planet" style="--orbit-radius: 100px; --orbit-speed: 15s; --start-angle: 240deg;">
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-planet" style="--orbit-radius: 160px; --orbit-speed: 20s; --start-angle: 60deg;">
+                    <span>Networking</span>
+                </div>
+                <div class="skill-planet" style="--orbit-radius: 160px; --orbit-speed: 20s; --start-angle: 180deg;">
+                    <span>Linux</span>
+                </div>
+                <div class="skill-planet" style="--orbit-radius: 160px; --orbit-speed: 20s; --start-angle: 300deg;">
+                    <span>Git/GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ACHIEVEMENTS SECTION ========== -->
+    <section id="achievements" class="section">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">// MILESTONES</span>
+            <h2 class="section-title">Achievements <span class="highlight">& Certificates</span></h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons animate-on-scroll" id="achievementFilters">
+            <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-th"></i> All
+            </button>
+            <button class="filter-btn" data-filter="certificate">
+                <i class="fas fa-certificate"></i> Certificates
+            </button>
+            <button class="filter-btn" data-filter="award">
+                <i class="fas fa-award"></i> Awards
+            </button>
+            <button class="filter-btn" data-filter="event">
+                <i class="fas fa-calendar-star"></i> Events
+            </button>
+        </div>
+
+        <div class="achievements-grid" id="achievementsGrid">
+            <!-- Coursera Certificate -->
+            <div class="achievement-card glass animate-on-scroll" data-category="certificate" id="courseraCard">
+                <div class="achievement-badge">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="achievement-image">
+                    <img src="images/coursera-cert.jpg" alt="Coursera Certificate" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img\'><i class=\'fas fa-certificate\'></i><span>Coursera Certificate</span></div>'">
+                </div>
+                <div class="achievement-content">
+                    <span class="achievement-tag">Certificate</span>
+                    <h3>Coursera Certification</h3>
+                    <p>Completed an industry-recognized course on Coursera, enhancing knowledge in 
+                    computer science fundamentals and cybersecurity concepts.</p>
+                    <div class="achievement-meta">
+                        <span><i class="fas fa-calendar"></i> 2025</span>
+                        <span><i class="fas fa-university"></i> Coursera</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NetCAD Certificate -->
+            <div class="achievement-card glass animate-on-scroll" data-category="certificate" id="netcadCard">
+                <div class="achievement-badge">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="achievement-image">
+                    <img src="images/netcad-cert.jpg" alt="NetCAD Certificate" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img\'><i class=\'fas fa-network-wired\'></i><span>NetCAD Certificate</span></div>'">
+                </div>
+                <div class="achievement-content">
+                    <span class="achievement-tag">Certificate</span>
+                    <h3>Cisco NetCAD Certification</h3>
+                    <p>Completed Cisco Networking Academy certification program, gaining expertise in 
+                    network fundamentals, routing, switching, and security protocols.</p>
+                    <div class="achievement-meta">
+                        <span><i class="fas fa-calendar"></i> 2025</span>
+                        <span><i class="fas fa-university"></i> Cisco NetCAD</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yuva AI Certificate -->
+            <div class="achievement-card glass animate-on-scroll" data-category="certificate" id="yuvaAiCard">
+                <div class="achievement-badge">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="achievement-image">
+                    <img src="images/yuva-ai-cert.jpg" alt="Yuva AI Certificate" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img\'><i class=\'fas fa-robot\'></i><span>Yuva AI Certificate</span></div>'">
+                </div>
+                <div class="achievement-content">
+                    <span class="achievement-tag">Certificate</span>
+                    <h3>Yuva AI Certification</h3>
+                    <p>Earned the Yuva AI certificate, demonstrating proficiency in artificial intelligence 
+                    concepts, machine learning basics, and AI application development.</p>
+                    <div class="achievement-meta">
+                        <span><i class="fas fa-calendar"></i> 2025</span>
+                        <span><i class="fas fa-university"></i> Yuva AI Program</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Award -->
+            <div class="achievement-card glass animate-on-scroll" data-category="award" id="academicAward">
+                <div class="achievement-badge">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="achievement-image">
+                    <img src="images/award.jpg" alt="Academic Award" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img\'><i class=\'fas fa-trophy\'></i><span>Academic Excellence</span></div>'">
+                </div>
+                <div class="achievement-content">
+                    <span class="achievement-tag award-tag">Award</span>
+                    <h3>Academic Excellence Award</h3>
+                    <p>Recognized for outstanding academic performance and consistent dedication 
+                    to learning and skill development throughout the academic year.</p>
+                    <div class="achievement-meta">
+                        <span><i class="fas fa-calendar"></i> 2025</span>
+                        <span><i class="fas fa-school"></i> University</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Event -->
+            <div class="achievement-card glass animate-on-scroll" data-category="event" id="techEvent">
+                <div class="achievement-badge">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="achievement-image">
+                    <img src="images/event.jpg" alt="Tech Event" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img\'><i class=\'fas fa-calendar-check\'></i><span>Tech Event</span></div>'">
+                </div>
+                <div class="achievement-content">
+                    <span class="achievement-tag event-tag">Event</span>
+                    <h3>Tech Fest / Workshop Participation</h3>
+                    <p>Participated in college tech fest and workshops, gaining hands-on experience 
+                    in emerging technologies and networking with industry professionals.</p>
+                    <div class="achievement-meta">
+                        <span><i class="fas fa-calendar"></i> 2025</span>
+                        <span><i class="fas fa-map-marker-alt"></i> College</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS SECTION ========== -->
+    <section id="projects" class="section">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">// MY WORK</span>
+            <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="projects-grid">
+            <!-- AI4A Project -->
+            <div class="project-card glass animate-on-scroll" id="ai4aProject">
+                <div class="project-image">
+                    <img src="images/ai4a-project.jpg" alt="AI4A Project Screenshot" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-brain\'></i><span>AI4A Project</span></div>'">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Code">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">AI</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Machine Learning</span>
+                    </div>
+                    <h3>AI4A Project</h3>
+                    <p>Developed an AI-powered application as part of the AI for All (AI4A) program. 
+                    The project showcases practical implementation of artificial intelligence concepts 
+                    including data preprocessing, model training, and deployment for real-world 
+                    problem solving.</p>
+                    <div class="project-footer">
+                        <span class="project-status">
+                            <span class="status-dot active"></span> Completed
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Thinking Project -->
+            <div class="project-card glass animate-on-scroll" id="designThinkingProject">
+                <div class="project-image">
+                    <img src="images/design-thinking.jpg" alt="Design Thinking Project" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-lightbulb\'></i><span>Design Thinking</span></div>'">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Code">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Design</span>
+                        <span class="project-tag">UX</span>
+                        <span class="project-tag">Innovation</span>
+                    </div>
+                    <h3>Design Thinking Project</h3>
+                    <p>Applied the Design Thinking methodology to identify and solve a real-world problem. 
+                    Went through all five stages — Empathize, Define, Ideate, Prototype, and Test — 
+                    to create a user-centered solution that addresses genuine user needs.</p>
+                    <div class="project-footer">
+                        <span class="project-status">
+                            <span class="status-dot active"></span> Completed
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACE Project -->
+            <div class="project-card glass animate-on-scroll" id="aceProject">
+                <div class="project-image">
+                    <img src="images/ace-project.jpg" alt="ACE Project Screenshot" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-cogs\'></i><span>ACE Project</span></div>'">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Code">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Engineering</span>
+                        <span class="project-tag">Teamwork</span>
+                        <span class="project-tag">Innovation</span>
+                    </div>
+                    <h3>ACE Project</h3>
+                    <p>Collaborated on the ACE (Applied Community Engagement) project, combining technical 
+                    skills with community engagement. Developed a solution that addresses community 
+                    challenges through technology and collaborative problem-solving approaches.</p>
+                    <div class="project-footer">
+                        <span class="project-status">
+                            <span class="status-dot active"></span> Completed
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Website Project -->
+            <div class="project-card glass animate-on-scroll" id="portfolioProject">
+                <div class="project-image">
+                    <img src="images/portfolio-project.jpg" alt="Portfolio Website" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-globe\'></i><span>Portfolio Website</span></div>'">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Code">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                    <h3>Space Portfolio Website</h3>
+                    <p>Designed and developed this immersive space-themed portfolio website featuring 
+                    3D planets, glassmorphism effects, smooth animations, and a fully responsive layout. 
+                    Built using pure HTML, CSS, and JavaScript.</p>
+                    <div class="project-footer">
+                        <span class="project-status">
+                            <span class="status-dot active"></span> Live
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cybersecurity Project -->
+            <div class="project-card glass animate-on-scroll" id="cyberProject">
+                <div class="project-image">
+                    <img src="images/cyber-project.jpg" alt="Cybersecurity Project" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-shield-alt\'></i><span>Cybersecurity</span></div>'">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Code">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Security</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Networking</span>
+                    </div>
+                    <h3>Cybersecurity Mini Project</h3>
+                    <p>Developed a cybersecurity-focused project exploring network security fundamentals, 
+                    including basic vulnerability scanning, password strength analysis, and secure 
+                    communication concepts as part of self-learning in ethical hacking.</p>
+                    <div class="project-footer">
+                        <span class="project-status">
+                            <span class="status-dot progress"></span> In Progress
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GALLERY SECTION ========== -->
+    <section id="gallery" class="section">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">// MEMORIES</span>
+            <h2 class="section-title">Photo <span class="highlight">Gallery</span></h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="gallery-filters animate-on-scroll">
+            <button class="filter-btn active" data-gallery-filter="all">All</button>
+            <button class="filter-btn" data-gallery-filter="photos">Photos</button>
+            <button class="filter-btn" data-gallery-filter="certificates">Certificates</button>
+            <button class="filter-btn" data-gallery-filter="events">Events</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Gallery items - replace src with actual images -->
+            <div class="gallery-item animate-on-scroll" data-gallery-category="photos" id="galleryItem1">
+                <img src="images/gallery-1.jpg" alt="College Life" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=galaxy1&backgroundColor=1a1a2e'">
+                <div class="gallery-overlay">
+                    <i class="fas fa-expand"></i>
+                    <span>College Life</span>
+                </div>
+            </div>
+            <div class="gallery-item animate-on-scroll" data-gallery-category="certificates" id="galleryItem2">
+                <img src="images/gallery-cert-1.jpg" alt="Coursera Certificate" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=cert1&backgroundColor=16213e'">
+                <div class="gallery-overlay">
+                    <i class="fas fa-expand"></i>
+                    <span>Coursera Certificate</span>
+                </div>
+            </div>
+            <div class="gallery-item animate-on-scroll" data-gallery-category="events" id="galleryItem3">
+                <img src="images/gallery-event-1.jpg" alt="Tech Event" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=event1&backgroundColor=0f3460'">
+                <div class="gallery-overlay">
+                    <i class="fas fa-expand"></i>
+                    <span>Tech Event</span>
+                </div>
+            </div>
+            <div class="gallery-item animate-on-scroll" data-gallery-category="photos" id="galleryItem4">
+                <img src="images/gallery-2.jpg" alt="Campus View" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=campus1&backgroundColor=1a1a2e'">
+                <div class="gallery-overlay">
+                    <i class="fas fa-expand"></i>
+                    <span>Campus View</span>
+                </div>
+            </div>
+            <div class="gallery-item animate-on-scroll" data-gallery-category="certificates" id="galleryItem5">
+                <img src="images/gallery-cert-2.jpg" alt="NetCAD Certificate" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=cert2&backgroundColor=16213e'">
+                <div class="gallery-overlay">
+                    <i class="fas fa-expand"></i>
+                    <span>NetCAD Certificate</span>
+                </div>
+            </div>
+            <div class="gallery-item animate-on-scroll" data-gallery-category="certificates" id="galleryItem6">
+                <img src="images/gallery-cert-3.jpg" alt="Yuva AI Certificate" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=cert3&backgroundColor=0f3460'">
+                <div class="gallery-overlay">
+                    <i class="fas fa-expand"></i>
+                    <span>Yuva AI Certificate</span>
+                </div>
+            </div>
+            <div class="gallery-item animate-on-scroll" data-gallery-category="events" id="galleryItem7">
+                <img src="images/gallery-event-2.jpg" alt="Workshop" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=workshop1&backgroundColor=1a1a2e'">
+                <div class="gallery-overlay">
+                    <i class="fas fa-expand"></i>
+                    <span>Workshop</span>
+                </div>
+            </div>
+            <div class="gallery-item animate-on-scroll" data-gallery-category="photos" id="galleryItem8">
+                <img src="images/gallery-3.jpg" alt="Team Photo" onerror="this.src='https://api.dicebear.com/7.x/shapes/svg?seed=team1&backgroundColor=16213e'">
+                <div class="gallery-overlay">
+                    <i class="fas fa-expand"></i>
+                    <span>Team Photo</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+            <img src="" alt="Gallery Image" id="lightboxImage">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="section">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">// GET IN TOUCH</span>
+            <h2 class="section-title">Contact <span class="highlight">Me</span></h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info animate-on-scroll">
+                <h3>Let's Connect!</h3>
+                <p>Feel free to reach out for collaborations, project discussions, or just a friendly chat 
+                about cybersecurity and technology!</p>
+
+                <div class="contact-cards">
+                    <a href="mailto:your.email@example.com" class="contact-card glass" id="contactEmail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">your.email@example.com</span>
+                        </div>
+                    </a>
+
+                    <a href="tel:+91XXXXXXXXXX" class="contact-card glass" id="contactPhone">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-label">Phone</span>
+                            <span class="contact-value">+91 XXXXX XXXXX</span>
+                        </div>
+                    </a>
+
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-card glass" id="contactLinkedIn">
+                        <div class="contact-icon linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">linkedin.com/in/yourprofile</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/yourusername" target="_blank" class="contact-card glass" id="contactGithub">
+                        <div class="contact-icon github">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">github.com/yourusername</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form-container animate-on-scroll">
+                <form class="contact-form glass" id="contactForm">
+                    <div class="form-group">
+                        <label for="nameInput">
+                            <i class="fas fa-user"></i> Your Name
+                        </label>
+                        <input type="text" id="nameInput" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">
+                            <i class="fas fa-envelope"></i> Your Email
+                        </label>
+                        <input type="email" id="emailInput" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subjectInput">
+                            <i class="fas fa-tag"></i> Subject
+                        </label>
+                        <input type="text" id="subjectInput" name="subject" placeholder="What's this about?">
+                    </div>
+                    <div class="form-group">
+                        <label for="messageInput">
+                            <i class="fas fa-comment-dots"></i> Message
+                        </label>
+                        <textarea id="messageInput" name="message" rows="5" placeholder="Write your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                        <span class="btn-loading"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer glass" id="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">🪐</span>
+                <span class="logo-text">PORTFOLIO</span>
+                <p>Exploring the universe of technology, one project at a time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#projects">Projects</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Me</h4>
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:your.email@example.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Your Name. All rights reserved. | Built with 💜 and code</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <i class="fas fa-rocket"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
