@@ -23,6 +23,16 @@
     <div class="shooting-star" id="shootingStar1"></div>
     <div class="shooting-star shooting-star-2" id="shootingStar2"></div>
 
+    <!-- Burning Star (Top-Left of Hero) -->
+    <div class="burning-star" id="burningStar">
+        <div class="star-core"></div>
+        <div class="star-flare flare-1"></div>
+        <div class="star-flare flare-2"></div>
+        <div class="star-flare flare-3"></div>
+        <div class="star-flare flare-4"></div>
+        <div class="star-corona"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar glass" id="navbar">
         <div class="nav-brand">
@@ -66,9 +76,11 @@
                     <span class="tag-icon">🎓</span> 1st Year B.Tech CSE Student
                 </p>
                 <p class="hero-description">
-                    Aspiring <span class="highlight">Cybersecurity Professional</span> with a passion for 
-                    technology, problem-solving, and building secure digital solutions. Currently exploring 
-                    the vast universe of computer science — from networking fundamentals to ethical hacking.
+                    A passionate and dedicated student of <span class="highlight">MIT Vishwaprayag University</span>, 
+                    aspiring to become a <span class="highlight">Cybersecurity Professional</span>. Driven by curiosity 
+                    and a relentless desire to learn, currently exploring the vast universe of computer science — 
+                    from networking fundamentals to ethical hacking. Open to <span class="highlight">internships</span> 
+                    and <span class="highlight">job opportunities</span> in the cybersecurity domain.
                 </p>
                 <div class="hero-stats">
                     <div class="stat-card glass">
@@ -123,10 +135,11 @@
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <h4>B.Tech in Computer Science & Engineering</h4>
+                            <h4>B.Tech in Computer Science &amp; Engineering</h4>
                             <p class="timeline-date">2025 - 2029 (Expected)</p>
-                            <p>Currently in 1st year, building strong foundations in programming, 
-                            data structures, and computer networks.</p>
+                            <p>MIT Vishwaprayag University — Currently in 1st year, building strong 
+                            foundations in programming, data structures, and computer networks. 
+                            A passionate and dedicated learner with keen interest in cybersecurity.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -418,6 +431,45 @@
                     </div>
                 </div>
             </div>
+            <!-- 12th Marksheet -->
+            <div class="achievement-card glass animate-on-scroll" data-category="certificate" id="marksheet12th">
+                <div class="achievement-badge">
+                    <i class="fas fa-scroll"></i>
+                </div>
+                <div class="achievement-image">
+                    <img src="images/marksheet-12th.jpg" alt="12th Marksheet" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img\'><i class=\'fas fa-scroll\'></i><span>12th Marksheet</span></div>'">
+                </div>
+                <div class="achievement-content">
+                    <span class="achievement-tag">Certificate</span>
+                    <h3>Higher Secondary (12th) Marksheet</h3>
+                    <p>Successfully completed Higher Secondary education with Science stream, 
+                    focusing on Mathematics and Computer Science as core subjects.</p>
+                    <div class="achievement-meta">
+                        <span><i class="fas fa-calendar"></i> 2025</span>
+                        <span><i class="fas fa-school"></i> HSC Board</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10th Marksheet -->
+            <div class="achievement-card glass animate-on-scroll" data-category="certificate" id="marksheet10th">
+                <div class="achievement-badge">
+                    <i class="fas fa-scroll"></i>
+                </div>
+                <div class="achievement-image">
+                    <img src="images/marksheet-10th.jpg" alt="10th Marksheet" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img\'><i class=\'fas fa-scroll\'></i><span>10th Marksheet</span></div>'">
+                </div>
+                <div class="achievement-content">
+                    <span class="achievement-tag">Certificate</span>
+                    <h3>Secondary School (10th) Marksheet</h3>
+                    <p>Completed Secondary School Certificate examination, laying the groundwork 
+                    for a career in technology and computer science.</p>
+                    <div class="achievement-meta">
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-school"></i> SSC Board</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -433,7 +485,7 @@
             <!-- AI4A Project -->
             <div class="project-card glass animate-on-scroll" id="ai4aProject">
                 <div class="project-image">
-                    <img src="images/ai4a-project.jpg" alt="AI4A Project Screenshot" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-brain\'></i><span>AI4A Project</span></div>'">
+                    <img src="images/ai4a-project.png" alt="AI4A Project Screenshot" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-brain\'></i><span>AI4A Project</span></div>'">
                     <div class="project-overlay">
                         <a href="#" class="project-link" title="View Live">
                             <i class="fas fa-external-link-alt"></i>
@@ -465,7 +517,7 @@
             <!-- Design Thinking Project -->
             <div class="project-card glass animate-on-scroll" id="designThinkingProject">
                 <div class="project-image">
-                    <img src="images/design-thinking.jpg" alt="Design Thinking Project" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-lightbulb\'></i><span>Design Thinking</span></div>'">
+                    <img src="images/design-thinking.png" alt="Design Thinking Project" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-lightbulb\'></i><span>Design Thinking</span></div>'">
                     <div class="project-overlay">
                         <a href="#" class="project-link" title="View Live">
                             <i class="fas fa-external-link-alt"></i>
@@ -496,7 +548,7 @@
             <!-- ACE Project -->
             <div class="project-card glass animate-on-scroll" id="aceProject">
                 <div class="project-image">
-                    <img src="images/ace-project.jpg" alt="ACE Project Screenshot" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-cogs\'></i><span>ACE Project</span></div>'">
+                    <img src="images/ace-project.png" alt="ACE Project Screenshot" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-cogs\'></i><span>ACE Project</span></div>'">
                     <div class="project-overlay">
                         <a href="#" class="project-link" title="View Live">
                             <i class="fas fa-external-link-alt"></i>
@@ -527,7 +579,7 @@
             <!-- Portfolio Website Project -->
             <div class="project-card glass animate-on-scroll" id="portfolioProject">
                 <div class="project-image">
-                    <img src="images/portfolio-project.jpg" alt="Portfolio Website" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-globe\'></i><span>Portfolio Website</span></div>'">
+                    <img src="images/portfolio-project.png" alt="Portfolio Website" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-globe\'></i><span>Portfolio Website</span></div>'">
                     <div class="project-overlay">
                         <a href="#" class="project-link" title="View Live">
                             <i class="fas fa-external-link-alt"></i>
@@ -558,7 +610,7 @@
             <!-- Cybersecurity Project -->
             <div class="project-card glass animate-on-scroll" id="cyberProject">
                 <div class="project-image">
-                    <img src="images/cyber-project.jpg" alt="Cybersecurity Project" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-shield-alt\'></i><span>Cybersecurity</span></div>'">
+                    <img src="images/cyber-project.png" alt="Cybersecurity Project" onerror="this.parentElement.innerHTML='<div class=\'placeholder-img project-placeholder\'><i class=\'fas fa-shield-alt\'></i><span>Cybersecurity</span></div>'">
                     <div class="project-overlay">
                         <a href="#" class="project-link" title="View Live">
                             <i class="fas fa-external-link-alt"></i>
@@ -730,6 +782,19 @@
                 </div>
             </div>
 
+            <!-- Internship & Job Interest Banner -->
+            <div class="hiring-banner glass animate-on-scroll" id="hiringBanner">
+                <div class="hiring-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="hiring-text">
+                    <h4>🚀 Open to Opportunities!</h4>
+                    <p>I am actively looking for <strong>internships</strong> and <strong>job offers</strong> 
+                    in Cybersecurity, Networking, and Software Development. If you have an opportunity 
+                    that aligns with my skills, I'd love to connect!</p>
+                </div>
+            </div>
+
             <div class="contact-form-container animate-on-scroll">
                 <form class="contact-form glass" id="contactForm">
                     <div class="form-group">
@@ -764,6 +829,18 @@
             </div>
         </div>
     </section>
+
+    <!-- Spinning Black Hole (End of Page) -->
+    <div class="blackhole-container" id="blackholeContainer">
+        <div class="blackhole">
+            <div class="accretion-disk"></div>
+            <div class="accretion-disk disk-2"></div>
+            <div class="accretion-disk disk-3"></div>
+            <div class="event-horizon"></div>
+            <div class="singularity"></div>
+        </div>
+        <p class="blackhole-text">You've reached the edge of the universe...</p>
+    </div>
 
     <!-- ========== FOOTER ========== -->
     <footer class="footer glass" id="footer">
@@ -813,4 +890,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
