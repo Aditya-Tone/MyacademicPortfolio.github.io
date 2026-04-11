@@ -2000,15 +2000,16 @@ img {
     color: white;
 }
 
-/* ---------- Burning Star ---------- */
+/* ---------- Burning Star (3D Mega) ---------- */
 .burning-star {
     position: fixed;
-    top: 12%;
-    left: 4%;
-    width: 60px;
-    height: 60px;
+    top: 5%;
+    left: 2%;
+    width: 180px;
+    height: 180px;
     z-index: 0;
     pointer-events: none;
+    perspective: 600px;
 }
 
 .star-core {
@@ -2016,26 +2017,43 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: radial-gradient(circle, #fff 0%, #ffd700 30%, #ff8c00 60%, #ff4500 100%);
+    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #fffbe6 15%, #ffd700 35%, #ff8c00 55%, #ff4500 75%, #cc2200 100%);
     box-shadow:
-        0 0 15px #ffd700,
-        0 0 30px #ff8c00,
-        0 0 60px #ff4500,
-        0 0 100px rgba(255, 69, 0, 0.5);
+        0 0 20px 5px #ffd700,
+        0 0 50px 15px #ff8c00,
+        0 0 100px 30px rgba(255, 69, 0, 0.6),
+        0 0 160px 50px rgba(255, 69, 0, 0.3),
+        0 0 250px 80px rgba(255, 140, 0, 0.15),
+        inset -8px -8px 20px rgba(204, 34, 0, 0.6),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.3);
     animation: star-burn 2s ease-in-out infinite alternate;
 }
 
 @keyframes star-burn {
     0% {
-        transform: translate(-50%, -50%) scale(1);
-        box-shadow: 0 0 15px #ffd700, 0 0 30px #ff8c00, 0 0 60px #ff4500, 0 0 100px rgba(255, 69, 0, 0.5);
+        transform: translate(-50%, -50%) scale(1) rotateZ(0deg);
+        box-shadow:
+            0 0 20px 5px #ffd700,
+            0 0 50px 15px #ff8c00,
+            0 0 100px 30px rgba(255, 69, 0, 0.6),
+            0 0 160px 50px rgba(255, 69, 0, 0.3),
+            0 0 250px 80px rgba(255, 140, 0, 0.15),
+            inset -8px -8px 20px rgba(204, 34, 0, 0.6),
+            inset 5px 5px 15px rgba(255, 255, 255, 0.3);
     }
     100% {
-        transform: translate(-50%, -50%) scale(1.15);
-        box-shadow: 0 0 20px #ffd700, 0 0 40px #ff8c00, 0 0 80px #ff4500, 0 0 120px rgba(255, 69, 0, 0.6);
+        transform: translate(-50%, -50%) scale(1.12) rotateZ(5deg);
+        box-shadow:
+            0 0 25px 8px #ffd700,
+            0 0 60px 20px #ff8c00,
+            0 0 120px 40px rgba(255, 69, 0, 0.7),
+            0 0 200px 60px rgba(255, 69, 0, 0.35),
+            0 0 300px 100px rgba(255, 140, 0, 0.2),
+            inset -10px -10px 25px rgba(204, 34, 0, 0.7),
+            inset 6px 6px 18px rgba(255, 255, 255, 0.35);
     }
 }
 
@@ -2044,28 +2062,29 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 165, 0, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 200, 50, 0.15) 0%, rgba(255, 140, 0, 0.08) 40%, transparent 70%);
     animation: corona-pulse 3s ease-in-out infinite;
 }
 
 @keyframes corona-pulse {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
-    50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.3; }
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+    50% { transform: translate(-50%, -50%) scale(1.6); opacity: 0.25; }
 }
 
 .star-flare {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 3px;
-    height: 25px;
-    background: linear-gradient(to top, transparent, #ffd700, #fff);
-    border-radius: 2px;
+    width: 4px;
+    height: 55px;
+    background: linear-gradient(to top, transparent, rgba(255, 215, 0, 0.6), rgba(255, 255, 255, 0.9));
+    border-radius: 3px;
     transform-origin: bottom center;
     opacity: 0.8;
+    filter: blur(1px);
 }
 
 .flare-1 {
@@ -2089,13 +2108,13 @@ img {
 }
 
 @keyframes flare-dance {
-    0%, 100% { height: 25px; opacity: 0.8; }
-    25% { height: 35px; opacity: 1; }
-    50% { height: 15px; opacity: 0.5; }
-    75% { height: 30px; opacity: 0.9; }
+    0%, 100% { height: 55px; opacity: 0.7; }
+    25% { height: 75px; opacity: 1; }
+    50% { height: 35px; opacity: 0.4; }
+    75% { height: 65px; opacity: 0.85; }
 }
 
-/* ---------- Spinning Black Hole ---------- */
+/* ---------- Spinning Black Hole (3D Mega) ---------- */
 .blackhole-container {
     position: relative;
     z-index: 1;
@@ -2103,72 +2122,97 @@ img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4rem 0 2rem;
+    padding: 5rem 0 3rem;
+    perspective: 800px;
 }
 
 .blackhole {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: rotateX(15deg);
 }
 
 .singularity {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background: radial-gradient(circle, #000 0%, #000 50%, rgba(10, 10, 26, 0.9) 100%);
+    background: radial-gradient(circle, #000 0%, #000 60%, rgba(5, 0, 20, 0.95) 100%);
     box-shadow:
-        0 0 20px rgba(0, 0, 0, 0.8),
-        0 0 40px rgba(0, 0, 0, 0.6),
-        inset 0 0 20px rgba(0, 0, 0, 1);
-    z-index: 3;
+        0 0 30px 10px rgba(0, 0, 0, 0.9),
+        0 0 60px 20px rgba(0, 0, 0, 0.7),
+        0 0 100px 30px rgba(0, 0, 0, 0.4),
+        inset 0 0 30px rgba(0, 0, 0, 1);
+    z-index: 5;
 }
 
 .event-horizon {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    background: radial-gradient(circle, #000 30%, rgba(124, 58, 237, 0.3) 60%, transparent 100%);
-    box-shadow: 0 0 30px rgba(124, 58, 237, 0.4);
-    z-index: 2;
+    background: radial-gradient(circle, #000 40%, rgba(124, 58, 237, 0.2) 65%, transparent 100%);
+    box-shadow:
+        0 0 40px rgba(124, 58, 237, 0.5),
+        0 0 80px rgba(124, 58, 237, 0.2),
+        inset 0 0 30px rgba(0, 0, 0, 1);
+    z-index: 4;
+    animation: horizon-pulse 4s ease-in-out infinite;
+}
+
+@keyframes horizon-pulse {
+    0%, 100% { box-shadow: 0 0 40px rgba(124, 58, 237, 0.5), 0 0 80px rgba(124, 58, 237, 0.2), inset 0 0 30px rgba(0,0,0,1); }
+    50% { box-shadow: 0 0 50px rgba(124, 58, 237, 0.7), 0 0 100px rgba(124, 58, 237, 0.3), inset 0 0 30px rgba(0,0,0,1); }
 }
 
 .accretion-disk {
     position: absolute;
-    width: 180px;
-    height: 180px;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
-    border: 2px solid transparent;
-    border-top-color: rgba(168, 85, 247, 0.6);
-    border-right-color: rgba(255, 165, 0, 0.4);
-    border-bottom-color: rgba(168, 85, 247, 0.2);
-    animation: spin-disk 4s linear infinite;
+    border: 3px solid transparent;
+    border-top-color: rgba(168, 85, 247, 0.7);
+    border-right-color: rgba(255, 165, 0, 0.5);
+    border-bottom-color: rgba(168, 85, 247, 0.15);
+    border-left-color: rgba(255, 100, 0, 0.3);
+    animation: spin-disk 5s linear infinite;
     box-shadow:
-        0 0 15px rgba(168, 85, 247, 0.2),
-        inset 0 0 15px rgba(168, 85, 247, 0.1);
+        0 0 25px rgba(168, 85, 247, 0.3),
+        0 0 50px rgba(168, 85, 247, 0.1),
+        inset 0 0 25px rgba(168, 85, 247, 0.1);
+    filter: blur(0.5px);
 }
 
 .disk-2 {
-    width: 150px;
-    height: 150px;
-    border-top-color: rgba(255, 165, 0, 0.5);
-    border-right-color: rgba(192, 132, 252, 0.4);
-    border-bottom-color: rgba(255, 165, 0, 0.2);
-    animation: spin-disk 3s linear infinite reverse;
+    width: 270px;
+    height: 270px;
+    border-width: 3px;
+    border-top-color: rgba(255, 165, 0, 0.6);
+    border-right-color: rgba(192, 132, 252, 0.5);
+    border-bottom-color: rgba(255, 165, 0, 0.1);
+    border-left-color: rgba(192, 132, 252, 0.3);
+    animation: spin-disk 3.5s linear infinite reverse;
+    box-shadow:
+        0 0 20px rgba(255, 165, 0, 0.25),
+        inset 0 0 20px rgba(255, 165, 0, 0.08);
 }
 
 .disk-3 {
-    width: 120px;
-    height: 120px;
-    border-top-color: rgba(192, 132, 252, 0.7);
-    border-right-color: rgba(255, 200, 50, 0.5);
-    border-bottom-color: rgba(192, 132, 252, 0.3);
-    animation: spin-disk 2s linear infinite;
+    width: 220px;
+    height: 220px;
+    border-width: 2px;
+    border-top-color: rgba(192, 132, 252, 0.8);
+    border-right-color: rgba(255, 200, 50, 0.6);
+    border-bottom-color: rgba(192, 132, 252, 0.2);
+    border-left-color: rgba(255, 200, 50, 0.4);
+    animation: spin-disk 2.5s linear infinite;
+    box-shadow:
+        0 0 15px rgba(192, 132, 252, 0.3),
+        inset 0 0 15px rgba(192, 132, 252, 0.1);
 }
 
 @keyframes spin-disk {
@@ -2177,18 +2221,18 @@ img {
 }
 
 .blackhole-text {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     animation: fade-text 3s ease-in-out infinite;
 }
 
 @keyframes fade-text {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
+    0%, 100% { opacity: 0.3; letter-spacing: 3px; }
+    50% { opacity: 1; letter-spacing: 5px; }
 }
 
 /* ---------- Hiring Banner ---------- */
@@ -2240,22 +2284,66 @@ img {
     color: #34d399;
 }
 
+/* ---------- Extra Background Planets ---------- */
+.planet-5 {
+    width: 45px;
+    height: 45px;
+    background: radial-gradient(circle at 30% 30%, #34d399, #059669, #064e3b);
+    top: 80%;
+    right: 15%;
+    animation-delay: -3s;
+    opacity: 0.4;
+}
+
+.planet-6 {
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle at 30% 30%, #fb923c, #ea580c, #7c2d12);
+    top: 45%;
+    right: 3%;
+    animation-delay: -12s;
+    opacity: 0.35;
+}
+
+.planet-7 {
+    width: 35px;
+    height: 35px;
+    background: radial-gradient(circle at 30% 30%, #e879f9, #a21caf, #4a044e);
+    bottom: 10%;
+    left: 15%;
+    animation-delay: -8s;
+    opacity: 0.45;
+}
+
+.planet-8 {
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle at 25% 25%, #60a5fa, #2563eb, #1e3a5f);
+    top: 25%;
+    left: 70%;
+    animation-delay: -15s;
+    opacity: 0.25;
+}
+
 /* ---------- Responsive: Burning Star & Black Hole ---------- */
 @media (max-width: 768px) {
     .burning-star {
-        width: 40px;
-        height: 40px;
-        top: 8%;
-        left: 3%;
+        width: 100px;
+        height: 100px;
+        top: 6%;
+        left: 2%;
     }
-    .star-core { width: 14px; height: 14px; }
-    .star-corona { width: 35px; height: 35px; }
-    .star-flare { height: 18px; }
-    .blackhole { width: 150px; height: 150px; }
-    .accretion-disk { width: 140px; height: 140px; }
-    .disk-2 { width: 110px; height: 110px; }
-    .disk-3 { width: 90px; height: 90px; }
+    .star-core { width: 25px; height: 25px; }
+    .star-corona { width: 70px; height: 70px; }
+    .star-flare { height: 30px; }
+    .blackhole { width: 220px; height: 220px; }
+    .accretion-disk { width: 200px; height: 200px; }
+    .disk-2 { width: 170px; height: 170px; }
+    .disk-3 { width: 140px; height: 140px; }
+    .singularity { width: 35px; height: 35px; }
+    .event-horizon { width: 60px; height: 60px; }
     .hiring-banner { flex-direction: column; align-items: center; text-align: center; }
+    .planet-5, .planet-6, .planet-7, .planet-8 { display: none; }
 }
 
 /* ---------- Print Styles ---------- */
