@@ -69,8 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const greetings = [
         "Hello, World! 👋",
         "Welcome to my Universe 🌌",
+        "MIT Vishwaprayag University 🎓",
         "Aspiring Cybersecurity Expert 🔐",
-        "1st Year BTech CSE Student 🎓",
+        "Passionate & Dedicated Student 🚀",
+        "Open to Internships & Opportunities 💼",
         "Chess Player ♟️ | Novel Reader 📚"
     ];
     let greetingIndex = 0;
