@@ -4,11 +4,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ─── Animated Star Field ──────────────────────────────────
+    // ─── Animated Star Field (Enhanced Brightness & Twinkling) ─
     const canvas = document.getElementById('starsCanvas');
     const ctx = canvas.getContext('2d');
     let stars = [];
-    const STAR_COUNT = 200;
+    const STAR_COUNT = 350;
 
     function resizeCanvas() {
         canvas.width = window.innerWidth;
@@ -18,14 +18,44 @@ document.addEventListener('DOMContentLoaded', () => {
     function createStars() {
         stars = [];
         for (let i = 0; i < STAR_COUNT; i++) {
+            // 3 brightness classes: bright (15%), medium (35%), dim (50%)
+            const roll = Math.random();
+            let radius, baseOpacity, twinkleSpeed, color;
+
+            if (roll < 0.15) {
+                // Bright stars — large, vivid, slow twinkle
+                radius = Math.random() * 2.2 + 1.2;
+                baseOpacity = Math.random() * 0.3 + 0.7;
+                twinkleSpeed = Math.random() * 0.008 + 0.003;
+                // Slight warm/cool tint
+                const tint = Math.random();
+                if (tint < 0.3) color = { r: 255, g: 240, b: 220 };       // warm white
+                else if (tint < 0.6) color = { r: 200, g: 220, b: 255 };   // cool blue-white
+                else color = { r: 255, g: 255, b: 255 };                    // pure white
+            } else if (roll < 0.5) {
+                // Medium stars
+                radius = Math.random() * 1.2 + 0.6;
+                baseOpacity = Math.random() * 0.3 + 0.4;
+                twinkleSpeed = Math.random() * 0.015 + 0.005;
+                color = { r: 255, g: 255, b: 255 };
+            } else {
+                // Dim background stars
+                radius = Math.random() * 0.8 + 0.2;
+                baseOpacity = Math.random() * 0.25 + 0.15;
+                twinkleSpeed = Math.random() * 0.025 + 0.008;
+                color = { r: 220, g: 220, b: 240 };
+            }
+
             stars.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                radius: Math.random() * 1.5 + 0.3,
-                opacity: Math.random(),
-                speed: Math.random() * 0.5 + 0.1,
-                twinkleSpeed: Math.random() * 0.02 + 0.005,
-                twinkleDirection: Math.random() > 0.5 ? 1 : -1
+                radius,
+                opacity: baseOpacity,
+                baseOpacity,
+                speed: Math.random() * 0.3 + 0.05,
+                twinkleSpeed,
+                twinkleDirection: Math.random() > 0.5 ? 1 : -1,
+                color
             });
         }
     }
@@ -34,22 +64,32 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
         stars.forEach(star => {
-            // Twinkle effect
+            // Twinkle effect with natural brightness bounds
             star.opacity += star.twinkleSpeed * star.twinkleDirection;
-            if (star.opacity >= 1) { star.twinkleDirection = -1; }
-            if (star.opacity <= 0.2) { star.twinkleDirection = 1; }
+            const maxOp = Math.min(star.baseOpacity + 0.3, 1);
+            const minOp = Math.max(star.baseOpacity - 0.25, 0.08);
+            if (star.opacity >= maxOp) { star.twinkleDirection = -1; }
+            if (star.opacity <= minOp) { star.twinkleDirection = 1; }
 
-            // Slow drift
-            star.y += star.speed * 0.1;
+            // Slow drift downward
+            star.y += star.speed * 0.08;
             if (star.y > canvas.height) {
                 star.y = 0;
                 star.x = Math.random() * canvas.width;
             }
 
+            // Draw star with glow for bright ones
+            if (star.radius > 1.2) {
+                // Add subtle glow halo around bright stars
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius * 3, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${star.color.r}, ${star.color.g}, ${star.color.b}, ${star.opacity * 0.08})`;
+                ctx.fill();
+            }
+
             ctx.beginPath();
             ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-
-            ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity * 0.8})`;
+            ctx.fillStyle = `rgba(${star.color.r}, ${star.color.g}, ${star.color.b}, ${star.opacity})`;
             ctx.fill();
         });
 
@@ -384,9 +424,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function animatePlanets() {
-        const planets = document.querySelectorAll('.planet, .planet-ring');
+        const planets = document.querySelectorAll('.planet');
+        const depthSpeeds = [8, 12, 6, 10, 5, 14, 4, 9];
         planets.forEach((planet, index) => {
-            const speed = (index + 1) * 8;
+            const speed = depthSpeeds[index % depthSpeeds.length];
             const x = mouseX * speed;
             const y = mouseY * speed;
             planet.style.transform = `translate(${x}px, ${y}px)`;
